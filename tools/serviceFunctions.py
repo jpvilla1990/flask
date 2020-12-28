@@ -18,14 +18,14 @@ class ServiceFunctions(object):
             Method to scrape an URL
         """
         response = requests.get(url)
-        scrapped = BeautifulSoup(response.text, "html.parser")
-        return scrapped
+        scraped = BeautifulSoup(response.text, "html.parser")
+        return scraped
 
-    def getPriceWollPlatz(self, scrapped):
+    def getPriceWollPlatz(self, scraped):
         """
             Method to obtain the price from wollplatz website
         """
-        productPrice = scrapped.findChild("span", {"class": "product-price"})
+        productPrice = scraped.findChild("span", {"class": "product-price"})
         priceNumber = productPrice.findAll("span", {"class": "product-price-amount"})[0].text
         currency = productPrice.findAll("span", {"class": "product-price-currency"})[0].text
         price = priceNumber + currency
@@ -33,21 +33,21 @@ class ServiceFunctions(object):
                 "price":price,
                 })
 
-    def getDeliveryTimeWollPlatz(self, scrapped):
+    def getDeliveryTimeWollPlatz(self, scraped):
         """
             Method to obtain the delivery time from wollplatz website
         """
-        delivery_time_text = scrapped.find_all("div", {"id": "actie-bar-1"})[0].text.split("Lieferzeit")
+        delivery_time_text = scraped.find_all("div", {"id": "actie-bar-1"})[0].text.split("Lieferzeit")
         delivery_time = "Die Lieferzeit " + delivery_time_text[1]
         return dict({
                 "deliveryTime":delivery_time,
                 })
 
-    def getSpecificationsFromTableWollPlatz(self, scrapped):
+    def getSpecificationsFromTableWollPlatz(self, scraped):
         """
             Method to obtain several sepcifications given in a table from woll platz
         """
-        specifications_table = scrapped.findAll("div", {"id": "pdetailTableSpecs"})[0].findAll("td")
+        specifications_table = scraped.findAll("div", {"id": "pdetailTableSpecs"})[0].findAll("td")
         i=0
         needleSize = None
         composition = None

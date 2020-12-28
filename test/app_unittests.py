@@ -10,6 +10,8 @@ sys.path.append(app_path)
 from tools.routeFunctions import RouteFunctions
 from tools.serviceFunctions import ServiceFunctions
 
+from flask import Flask, render_template, request
+
 import unittest
 import mock
 import xmlrunner
