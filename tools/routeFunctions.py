@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import render_template
 from tools.serviceFunctions import ServiceFunctions
+import numpy as np
 
 class RouteFunctions(object):
     """
@@ -8,6 +9,16 @@ class RouteFunctions(object):
     """
     def __init__(self):
         self.serviceFunctions = ServiceFunctions()
+
+    def paramsSaveCsv(self, name, dictionary):
+        """
+            Method to save csv file
+        """
+        csv_file = name + ".csv"
+        columns = list(dictionary.keys())
+        params = list(dictionary.values())
+        npParams = np.array([columns,params])
+        np.savetxt("results/" + name + ".csv", npParams, fmt="%s", delimiter=";")
 
     def ButtonRequestHome(self, requestObject, buttons, render, urls):
         """
@@ -24,6 +35,7 @@ class RouteFunctions(object):
                 params.update(price)
                 params.update(deliveryTime)
                 params.update(table)
+                self.paramsSaveCsv(buttons[0], params)
                 return render_template(render,
                              button1=buttons[0],
                              button2=buttons[1],
@@ -44,6 +56,7 @@ class RouteFunctions(object):
                 params.update(price)
                 params.update(deliveryTime)
                 params.update(table)
+                self.paramsSaveCsv(buttons[1], params)
                 return render_template(render,
                              button1=buttons[0],
                              button2=buttons[1],
@@ -64,6 +77,7 @@ class RouteFunctions(object):
                 params.update(price)
                 params.update(deliveryTime)
                 params.update(table)
+                self.paramsSaveCsv(buttons[2], params)
                 return render_template(render,
                              button1=buttons[0],
                              button2=buttons[1],
@@ -84,6 +98,7 @@ class RouteFunctions(object):
                 params.update(price)
                 params.update(deliveryTime)
                 params.update(table)
+                self.paramsSaveCsv(buttons[3], params)
                 return render_template(render,
                              button1=buttons[0],
                              button2=buttons[1],

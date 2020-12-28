@@ -15,6 +15,7 @@ pip3 install mock
 pip3 install xmlrunner
 pip3 install selenium
 pip3 install webdriver-manager
+pip3 install numpy
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
