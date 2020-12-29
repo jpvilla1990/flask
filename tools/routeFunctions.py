@@ -13,6 +13,8 @@ class RouteFunctions(object):
     def paramsSaveCsv(self, name, dictionary):
         """
             Method to save csv file
+            @name: String with name of the file
+            @dictionary dict with the content of the results
         """
         csv_file = name + ".csv"
         columns = list(dictionary.keys())
@@ -24,6 +26,12 @@ class RouteFunctions(object):
         """
             Method to handle a button via POST
             if nothing is executed the function returns false
+            @requestObject object type request which contains the attributes of the http request
+            @buttons Array with the name i String of the buttons
+            @render html file
+            @urls array with list of urls in string
+
+            return a render_template
         """
         params = dict()
         if requestObject.method == 'POST':

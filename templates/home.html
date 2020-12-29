@@ -44,36 +44,36 @@ body {font-size:16px;}
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-{% if buttonTag %}
+
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
+
+<ul class="w3-ul w3-light-grey w3-center">
+    <div class="w3-padding-64"></div>
+    <div class="w3-jumbo">WILLKOMMEN ZU DEN WOLLKNÄUL-INFORMATIONEN</div>
+    <div class="w3-padding-64">Für weitere Informationen, klicken Sie bitte auf der Linken Seite die Text Felder an</div>
+</ul>
+
   <!-- Header -->
-  <div class="w3-container" style="margin-top:80px" id="showcase">
+  {% if buttonTag %}
+  <div class="w3-container" style="margin-top:40px" id="showcase">
     <h1 class="w3-jumbo"><b>Ergebnisse</b></h1>
   </div>
 
-  <div class="w3-row-padding">
+  <div class="w3-row-padding w3-center">
     <div class="w3-half w3-margin-bottom">
-      <ul class="w3-ul w3-light-grey w3-center">
-        <li class="w3-padding-16">QUELLE</li>
-        <li class="w3-padding-16">PREIS</li>
-        <li class="w3-padding-16">LIEFERUNGSZEIT</li>
-        <li class="w3-padding-16">NADELSTÄRKE</li>
-        <li class="w3-padding-16">ZUSAMMENSTELLUNG</li>
-      </ul>
-    </div>
-    <div class="w3-half">
-      <ul class="w3-ul w3-light-grey w3-center">
-        <li class="w3-padding-16">{{ url }}</li>
-        <li class="w3-padding-16">{{ price }}</li>
-        <li class="w3-padding-16">{{ deliveryTime }}</li>
-        <li class="w3-padding-16">{{ needleSize }}</li>
-        <li class="w3-padding-16">{{ composition }}</li>
+      <ul class="w3-ul w3-light-grey">
+        <li class="w3-padding-16">QUELLE: {{ url }}</li>
+        <li class="w3-padding-16">PREIS: {{ price }}</li>
+        <li class="w3-padding-16">LIEFERUNGSZEIT: {{ deliveryTime }}</li>
+        <li class="w3-padding-16">NADELSTÄRKE: {{ needleSize }}</li>
+        <li class="w3-padding-16">ZUSAMMENSTELLUNG: {{ composition }}</li>
       </ul>
     </div>
   </div>
+  {% endif %}
 </div>
-{% endif %}
+
 
 <script>
 // Script to open and close sidebar

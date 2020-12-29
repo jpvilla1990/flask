@@ -16,6 +16,9 @@ class ServiceFunctions(object):
     def scrapeData(self, url):
         """
             Method to scrape an URL
+            @url string with url to scrape
+
+            return a bs4 object with the scraped website
         """
         response = requests.get(url)
         scraped = BeautifulSoup(response.text, "html.parser")
@@ -24,6 +27,9 @@ class ServiceFunctions(object):
     def getPriceWollPlatz(self, scraped):
         """
             Method to obtain the price from wollplatz website
+            @scraped bs4 object with scraped website
+
+            return dict with price
         """
         productPrice = scraped.findChild("span", {"class": "product-price"})
         priceNumber = productPrice.findAll("span", {"class": "product-price-amount"})[0].text
@@ -36,6 +42,9 @@ class ServiceFunctions(object):
     def getDeliveryTimeWollPlatz(self, scraped):
         """
             Method to obtain the delivery time from wollplatz website
+            @scraped bs4 object with scraped website
+
+            return dict with delivery time
         """
         delivery_time_text = scraped.find_all("div", {"id": "actie-bar-1"})[0].text.split("Lieferzeit")
         delivery_time = "Die Lieferzeit " + delivery_time_text[1]
@@ -46,6 +55,9 @@ class ServiceFunctions(object):
     def getSpecificationsFromTableWollPlatz(self, scraped):
         """
             Method to obtain several sepcifications given in a table from woll platz
+            @scraped bs4 object with scraped website
+
+            return dict with needle size and composition
         """
         specifications_table = scraped.findAll("div", {"id": "pdetailTableSpecs"})[0].findAll("td")
         i=0
