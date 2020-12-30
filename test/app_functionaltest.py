@@ -124,6 +124,6 @@ class TestUnitTestApp(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(
-        testRunner=xmlrunner.XMLTestRunner(output='unittest_app'),
+        testRunner=xmlrunner.XMLTestRunner(output='functionaltest_results'),
         verbosity=2
     )

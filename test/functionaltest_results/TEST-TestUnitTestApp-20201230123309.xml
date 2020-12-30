@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<testsuite errors="0" failures="0" name="TestUnitTestApp-20201230123309" tests="4" time="20.188">
+	<testcase classname="TestUnitTestApp" name="test01_functional_testButton1" time="5.712"/>
+	<testcase classname="TestUnitTestApp" name="test02_functional_testButton2" time="4.783"/>
+	<testcase classname="TestUnitTestApp" name="test03_functional_testButton3" time="4.572"/>
+	<testcase classname="TestUnitTestApp" name="test04_functional_testButton4" time="5.120"/>
+	<system-out>
+<![CDATA[---------------------------------------------------------------
+TEST01: Checking if by pressing the html button, the corresponding file is generated
+---------------------------------------------------------------
+---------------------------------------------------------------
+TEST02: Checking if by pressing the html button, the corresponding file is generated
+---------------------------------------------------------------
+---------------------------------------------------------------
+TEST03: Checking if by pressing the html button, the corresponding file is generated
+---------------------------------------------------------------
+---------------------------------------------------------------
+TEST04: Checking if by pressing the html button, the corresponding file is generated
+---------------------------------------------------------------
+]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

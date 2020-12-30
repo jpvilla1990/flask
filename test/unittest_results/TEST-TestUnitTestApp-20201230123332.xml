@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<testsuite errors="0" failures="0" name="TestUnitTestApp-20201230123332" tests="4" time="0.013">
+	<testcase classname="TestUnitTestApp" name="test01_serviceFunctions_scrapeData" time="0.001"/>
+	<testcase classname="TestUnitTestApp" name="test02_serviceFunctions_getPriceWollPlatz" time="0.002"/>
+	<testcase classname="TestUnitTestApp" name="test03_serviceFunctions_getDeliveryTimeWollPlatz" time="0.002"/>
+	<testcase classname="TestUnitTestApp" name="test04_serviceFunctions_getSpecificationsFromTableWollPlatz" time="0.008"/>
+	<system-out>
+<![CDATA[---------------------------------------------------------------
+TEST01: Checking method scrapeData from ServiceFunctions
+---------------------------------------------------------------
+---------------------------------------------------------------
+TEST02: Checking method getPriceWollPlatz from ServiceFunctions
+---------------------------------------------------------------
+---------------------------------------------------------------
+TEST03: Checking method getDeliveryTimeWollPlatz from ServiceFunctions
+---------------------------------------------------------------
+---------------------------------------------------------------
+TEST04: Checking method getSpecificationsFromTableWollPlatz from ServiceFunctions
+---------------------------------------------------------------
+]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

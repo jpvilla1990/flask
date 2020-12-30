@@ -32,7 +32,8 @@ This unittests will mock some function to guarantee isolation when testing the i
 the functions under test are basically those that scrape the website target where the info is obtained, but since the methods are
 mocked, the unittest works even if there is not internet and the application is not runnijg
 
-The functional tests before being execute, the application must be started beforehand.
+The functional tests before being execute, the application must be started beforehand, it is crucial to execute the set_enviroment.sh 
+script. This functional tests are designed to work only in linux enviroment
 `python3 app_functionaltest.py`
 These functional tests will use selenium to automatically click over each button of interest (every product), and it will verify if
 the corresponding csv file is generated or not.
